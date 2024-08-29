@@ -9,14 +9,23 @@ version = "0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    /*
     maven {
         url = uri("http://maven.snowlyicewolf.club")
         isAllowInsecureProtocol = true
     }
+    */
+
+    maven {
+        name = "JitPack IO"
+        url = uri("https://jitpack.io")
+    }
 }
 
+
 dependencies {
-    implementation("club.someoneice.json:amarok-json-for-java:1.6")
+    // implementation("club.someoneice.json:amarok-json-for-java:1.6")
+    implementation("com.github.AmarokIce:AmarokJsonForJava:1.6")
 
     testImplementation("com.google.guava:guava:33.0.0-jre")
 }

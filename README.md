@@ -1,11 +1,12 @@
-<center>
+<div align=center>
 
 ![](./img/AmarokJsonConfigForJava.png)
 
 ![](https://badgen.net/badge/Java/8/blue?icon=java)
 [![](https://badgen.net/badge/License/MPL-2.0/yellow)](./LICENSE.txt)
+[![](https://jitpack.io/v/AmarokIce/AmarokJsonConfigForJava.svg)](https://jitpack.io/#AmarokIce/AmarokJsonConfigForJava)
 
-</center>
+</div>
 
 # Amarok's Json Config for Java (AJC4J)
 
