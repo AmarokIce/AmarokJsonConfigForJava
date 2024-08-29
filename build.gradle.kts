@@ -1,9 +1,11 @@
 plugins {
     id("java")
+    id("idea")
+    id("maven-publish")
 }
 
 group = "club.someoneice.config"
-version = "1.0-SNAPSHOT"
+version = "0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -21,4 +23,27 @@ dependencies {
 
 tasks.test {
     systemProperty("file.encoding", "UTF-8")
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GithubPackage"
+            url = uri("https://maven.pkg.github.com/amarokice/amarokjsonconfigforjava")
+            credentials {
+                username = "AmarokIce"
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+
+    publications {
+        publications.create<MavenPublication>("amarok-json-config-for-java") {
+            groupId = this.groupId
+            artifactId = this.artifactId
+            version = this.version
+            pom.packaging = "jar"
+            artifact("$buildDir/libs/${this.artifactId}-${this.version}.jar")
+        }
+    }
 }
