@@ -34,6 +34,10 @@ tasks.test {
     systemProperty("file.encoding", "UTF-8")
 }
 
+tasks.javadoc {
+    options.encoding = "UTF-8"
+}
+
 publishing {
     repositories {
         maven {
